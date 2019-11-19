@@ -15,12 +15,12 @@ class Tree{
 public:
     TreeNode<T>* root;
     Tree(){
-        root = new TreeNode<int>(122);
+        root = new TreeNode<int>(121);
         root->left = new TreeNode<int>(99);
         root->right = new TreeNode<int>(250);
         root->left->right = new TreeNode<int>(110);
         root->right->left = new TreeNode<int>(200);
-        root->right->right = new TreeNode<int>(300);
+        root->right->right = new TreeNode<int>(350);
         //root->left->right->left = new TreeNode<int>(105);
     }
     TreeNode<T>* search(TreeNode<T>* root,T key){
