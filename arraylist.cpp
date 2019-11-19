@@ -1,6 +1,6 @@
 #include<iostream>
 #include<list>
-#include"stdafx.h"
+//#include"stdafx.h"
 using namespace std;
 template <typename T>
 class ArrayList {

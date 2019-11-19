@@ -54,6 +54,7 @@ int main(){
     a.in(4);
     a.show();
     a.out(b);a.show();
+    a.in(5);a.show();
     a.out(b);a.show();
     a.out(b);a.show();
     return 0;
