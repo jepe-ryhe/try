@@ -153,7 +153,7 @@ public:
                 nodes.push(p);
             while (p && (!p->right || p->right == pre))
             {
-                cout << p->data;
+                cout << p->data << ' ';
                 pre = p;
                 if (nodes.empty())
                     return;
@@ -182,10 +182,7 @@ int main()
 {
     Tree<int> tree;
     tree.levelorder();
-    tree.insert(105);
-    tree.levelorder();
-    tree.del(tree.search(tree.root, 250));
-    tree.levelorder();
     tree.inorder();
     tree.preorder();
+    tree.postorder();
 }
