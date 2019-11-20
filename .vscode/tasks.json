@@ -1,0 +1,44 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "build",
+            "command": "C:\\MinGW\\bin\\g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\..\\target\\${fileBasenameNoExtension}.exe"
+            ],
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
+            "type": "shell",
+            "label": "run",
+            "command": "${fileDirname}\\target\\${fileBasenameNoExtension}.exe",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "build run",
+            "command": "C:\\MinGW\\bin\\g++ -g -o ${fileDirname}\\..\\target\\${fileBasenameNoExtension}.exe ${file};${fileDirname}\\..\\target\\${fileBasenameNoExtension}.exe",
+        }
+    ],
+    "version": "2.0.0"
+}
