@@ -1,20 +1,24 @@
-#include<iostream>
-#include<list>
+#include <iostream>
+#include <list>
 //#include"stdafx.h"
 using namespace std;
 template <typename T>
-class ArrayList {
+class ArrayList
+{
 public:
-	ArrayList(const int size) {
+	ArrayList(const int size)
+	{
 		maxSize = size;
 		arrayList = new T[maxSize];
 		curLen = 0;
 		position = 0;
 	}
-	~ArrayList() {
+	~ArrayList()
+	{
 		delete[] arrayList;
 	}
-	void clear() {
+	void clear()
+	{
 		delete[] arrayList;
 		curLen = 0;
 		position = 0;
@@ -24,12 +28,13 @@ public:
 	bool Insert(const int p, const T value);
 	bool Delete(const int p);
 	bool Append(const T value);
-	bool GetValue(const int p, T& value);
+	bool GetValue(const int p, T &value);
 	bool SetValue(const int p, const T value);
 	bool GetPos(int &p, const T value);
 	T delmin();
 	void delone(const T value);
 	void delsome(const T min, const T max);
+
 private:
 	T *arrayList;
 	int maxSize;
@@ -37,17 +42,19 @@ private:
 	int position;
 };
 
-
-template<typename T>
+template <typename T>
 bool ArrayList<T>::Insert(const int p, const T value)
 {
-	if (curLen >= maxSize) {
+	if (curLen >= maxSize)
+	{
 		return false;
 	}
-	if (p<0 || p>curLen) {
+	if (p < 0 || p > curLen)
+	{
 		return false;
 	}
-	for (int i = curLen; i > p; i--) {
+	for (int i = curLen; i > p; i--)
+	{
 		arrayList[i] = arrayList[i - 1];
 	}
 	arrayList[p] = value;
@@ -55,26 +62,30 @@ bool ArrayList<T>::Insert(const int p, const T value)
 	return true;
 }
 
-template<typename T>
+template <typename T>
 bool ArrayList<T>::Delete(const int p)
 {
-	if (curLen <= 0) {
+	if (curLen <= 0)
+	{
 		return false;
 	}
-	if (p<0 || p>curLen) {
+	if (p < 0 || p > curLen)
+	{
 		return false;
 	}
-	for (int i = p; i < curLen; i++) {
+	for (int i = p; i < curLen; i++)
+	{
 		arrayList[i] = arrayList[i + 1];
 	}
 	curLen--;
 	return true;
 }
 
-template<typename T>
+template <typename T>
 bool ArrayList<T>::Append(const T value)
 {
-	if (curLen >= maxSize) {
+	if (curLen >= maxSize)
+	{
 		return false;
 	}
 	curLen++;
@@ -82,44 +93,50 @@ bool ArrayList<T>::Append(const T value)
 	return true;
 }
 
-template<typename T>
-bool ArrayList<T>::GetValue(const int p, T & value)
+template <typename T>
+bool ArrayList<T>::GetValue(const int p, T &value)
 {
-	if (p<0 || p>curLen) {
+	if (p < 0 || p > curLen)
+	{
 		return false;
 	}
 	value = arrayList[p];
 	return true;
 }
 
-template<typename T>
+template <typename T>
 bool ArrayList<T>::SetValue(const int p, const T value)
 {
-	if (p<0 || p>curLen) {
+	if (p < 0 || p > curLen)
+	{
 		return false;
 	}
 	arrayList[p] = value;
 	return true;
 }
 
-template<typename T>
-bool ArrayList<T>::GetPos(int & p, const T value)
+template <typename T>
+bool ArrayList<T>::GetPos(int &p, const T value)
 {
-	for (int i = 0; i < curLen; i++) {
-		if (arrayList[i] = value) {
+	for (int i = 0; i < curLen; i++)
+	{
+		if (arrayList[i] = value)
+		{
 			p = i;
 			return true;
 		}
 	}
 	return false;
 }
-template<typename T>
+template <typename T>
 T ArrayList<T>::delmin()
 {
 	T min = arrayList[0];
-	int p=0;
-	for (int i = 0; i < curLen; i++) {
-		if (arrayList < min) {
+	int p = 0;
+	for (int i = 0; i < curLen; i++)
+	{
+		if (arrayList < min)
+		{
 			p = i;
 			min = arrayList[i];
 		}
@@ -131,7 +148,7 @@ T ArrayList<T>::delmin()
 	return min;
 }
 
-template<typename T>
+template <typename T>
 void ArrayList<T>::delone(const T value)
 {
 	int p;
@@ -139,10 +156,11 @@ void ArrayList<T>::delone(const T value)
 	Delete(p);
 }
 
-template<typename T>
+template <typename T>
 void ArrayList<T>::delsome(const T min, const T max)
 {
-	for (T i = min; i <= max; i++) {
+	for (T i = min; i <= max; i++)
+	{
 		delone(i);
 	}
 }

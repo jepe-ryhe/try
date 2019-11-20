@@ -1,26 +1,34 @@
-#include<iostream>
-#include<queue>
-#include<stack>
+#include <iostream>
+#include <queue>
+#include <stack>
 using namespace std;
 template <class T>
-class TreeNode{
+class TreeNode
+{
 public:
     T data;
-    TreeNode<T>* left;
-    TreeNode<T>* right;
-    TreeNode(const T& ele){data = ele;left = 0;right = 0;}
+    TreeNode<T> *left;
+    TreeNode<T> *right;
+    TreeNode(const T &ele)
+    {
+        data = ele;
+        left = 0;
+        right = 0;
+    }
 };
 template <class T>
-class Tree{
+class Tree
+{
 public:
-    TreeNode<T>* root;
-    Tree(){
+    TreeNode<T> *root;
+    Tree()
+    {
         root = new TreeNode<char>('A');
-        root -> left = new TreeNode<char>('B');
-        root -> left -> left = new TreeNode<char>('C');
-        root -> right = new TreeNode<char>('D');
-        root -> right -> left = new TreeNode<char>('E');
-        root -> right -> right = new TreeNode<char>('F');
+        root->left = new TreeNode<char>('B');
+        root->left->left = new TreeNode<char>('C');
+        root->right = new TreeNode<char>('D');
+        root->right->left = new TreeNode<char>('E');
+        root->right->right = new TreeNode<char>('F');
     }
     /*Tree(T* ds,int n){
         root = new TreeNode(ds[0]);
@@ -29,65 +37,80 @@ public:
 
         }
     }*/
-    void levelorder(){
+    void levelorder()
+    {
         queue<TreeNode<T> *> nodes;
-        TreeNode<T>* p = root;
-        if(p)
+        TreeNode<T> *p = root;
+        if (p)
             nodes.push(p);
-        while(!nodes.empty()){
+        while (!nodes.empty())
+        {
             p = nodes.front();
-            cout<<p->data;
+            cout << p->data;
             nodes.pop();
-            if(p->left)
+            if (p->left)
                 nodes.push(p->left);
-            if(p->right)
+            if (p->right)
                 nodes.push(p->right);
         }
-        cout<<endl;
+        cout << endl;
     }
-    void preorder(){
-        stack<TreeNode<T>*> nodes;
-        TreeNode<T>* p = root;
-        while(!nodes.empty() || p){
-            if(p){
-                cout<<p->data;
-                if(p->right)
+    void preorder()
+    {
+        stack<TreeNode<T> *> nodes;
+        TreeNode<T> *p = root;
+        while (!nodes.empty() || p)
+        {
+            if (p)
+            {
+                cout << p->data;
+                if (p->right)
                     nodes.push(p->right);
                 p = p->left;
-            }else{
+            }
+            else
+            {
                 p = nodes.top();
                 nodes.pop();
             }
         }
-        cout<<endl;
+        cout << endl;
     }
-    void inorder(){
-        stack<TreeNode<T>*> nodes;
-        TreeNode<T>* p = root;
-        while(!nodes.empty() || p){
-            if(p){
+    void inorder()
+    {
+        stack<TreeNode<T> *> nodes;
+        TreeNode<T> *p = root;
+        while (!nodes.empty() || p)
+        {
+            if (p)
+            {
                 nodes.push(p);
                 p = p->left;
-            }else{
+            }
+            else
+            {
                 p = nodes.top();
-                cout<<p->data;
+                cout << p->data;
                 p = p->right;
                 nodes.pop();
             }
         }
-        cout<<endl;
+        cout << endl;
     }
-    void postorder(){
-        stack<TreeNode<T>*> nodes;
-        TreeNode<T>* p = root;
-        TreeNode<T>* pre = root;
-        while(p){
-            for(;p->left;p = p->left)
+    void postorder()
+    {
+        stack<TreeNode<T> *> nodes;
+        TreeNode<T> *p = root;
+        TreeNode<T> *pre = root;
+        while (p)
+        {
+            for (; p->left; p = p->left)
                 nodes.push(p);
-            while(p && (!p->right || p->right == pre)){
-                cout<<p->data;
+            while (p && (!p->right || p->right == pre))
+            {
+                cout << p->data;
                 pre = p;
-                if(nodes.empty())
+                if (nodes.empty())
                     return;
                 p = nodes.top();
                 nodes.pop();
@@ -95,10 +118,11 @@ public:
             nodes.push(p);
             p = p->right;
         }
-        cout<<endl;
+        cout << endl;
     }
 };
-int main(){
+int main()
+{
     Tree<char> tree;
     tree.levelorder();
     tree.preorder();
