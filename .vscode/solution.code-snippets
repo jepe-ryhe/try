@@ -25,7 +25,15 @@
 			"    auto result = solution.${2:func};",
 			"    ${3:print};",
 			"}"
-		],
-		"description": "Solution main function"
+		]
+	},
+
+	"Include": {
+		"prefix": "include",
+		"body": [
+			"#include<iostream>",
+			"${1:others}",
+			"using namespace std;"
+		]
 	}
 }
