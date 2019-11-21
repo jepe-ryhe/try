@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "vector": "cpp",
-        "hash_map": "cpp"
+        "hash_map": "cpp",
+        "tuple": "cpp"
     }
 }
