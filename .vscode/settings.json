@@ -2,6 +2,7 @@
     "files.associations": {
         "vector": "cpp",
         "hash_map": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "iosfwd": "cpp"
     }
 }
