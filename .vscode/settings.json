@@ -3,6 +3,9 @@
         "vector": "cpp",
         "hash_map": "cpp",
         "tuple": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "stdexcept": "cpp",
+        "*.tcc": "cpp",
+        "sstream": "cpp"
     }
 }

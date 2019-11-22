@@ -16,7 +16,7 @@
 	// 	"description": "Log output to console"
 	// }
 	"Solution": {
-		"prefix": ["solution","main"],
+		"prefix": "solution",
 		"body": [
 			"int main()",
 			"{",
@@ -29,11 +29,22 @@
 	},
 
 	"Include": {
-		"prefix": "include",
+		"prefix": "use",
 		"body": [
 			"#include<iostream>",
-			"${1:others}",
+			"${1:}",
 			"using namespace std;"
+		]
+	},
+
+	"Problem": {
+		"prefix": "program",
+		"body": [
+			"class Solution {",
+			"public:",
+			"    ${1:} {",
+			"    }"	,
+			"};"
 		]
 	}
 }
