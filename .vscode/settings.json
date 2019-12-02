@@ -7,6 +7,8 @@
         "stdexcept": "cpp",
         "*.tcc": "cpp",
         "sstream": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "string": "cpp",
+        "functional": "cpp"
     }
 }

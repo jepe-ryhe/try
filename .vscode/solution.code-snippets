@@ -21,9 +21,9 @@
 			"int main()",
 			"{",
 			"    Solution solution;",
-			"    ${1:args};",
+			"    ${1://args}",
 			"    auto result = solution.${2:func};",
-			"    ${3:print};",
+			"    ${3://print}",
 			"}"
 		]
 	},

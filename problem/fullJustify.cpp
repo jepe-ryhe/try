@@ -27,6 +27,8 @@ public:
             }
             if (i != len)
             {
+                i -= n+1;
+                
             }
         }
     }
