@@ -9,6 +9,7 @@
         "sstream": "cpp",
         "regex": "cpp",
         "string": "cpp",
-        "functional": "cpp"
+        "functional": "cpp",
+        "ostream": "cpp"
     }
 }
