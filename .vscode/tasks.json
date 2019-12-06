@@ -37,7 +37,7 @@
         {
             "type": "shell",
             "label": "build run",
-            "command": "C:\\MinGW\\bin\\g++ -g -o ${fileDirname}\\..\\target\\${fileBasenameNoExtension}.exe ${file};${fileDirname}\\..\\target\\${fileBasenameNoExtension}.exe",
+            "command": "C:\\MinGW\\bin\\g++ -g -o ${fileDirname}\\..\\target\\${fileBasenameNoExtension}.exe ${file};${fileDirname}\\..\\target\\${fileBasenameNoExtension}.exe;rm ${fileDirname}\\..\\target\\${fileBasenameNoExtension}.exe",
         }
     ],
     "version": "2.0.0"
