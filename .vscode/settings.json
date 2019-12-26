@@ -11,6 +11,10 @@
         "string": "cpp",
         "functional": "cpp",
         "ostream": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "map": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "numeric": "cpp"
     }
 }
