@@ -37,8 +37,13 @@
         },
         {
             "type": "shell",
-            "label": "build run",
+            "label": "build run gcc",
             "command": "C:\\MinGW\\bin\\g++ -std=c++17 -g -o ${fileDirname}\\${fileBasenameNoExtension}.exe ${file};${fileDirname}\\${fileBasenameNoExtension}.exe;rm ${fileDirname}\\${fileBasenameNoExtension}.exe",
+        },
+        {
+            "type": "shell",
+            "label": "build run",
+            "command": "D:\\VS\\VC\\Tools\\Llvm\\bin\\clang++ -std=c++17 -o ${fileDirname}\\${fileBasenameNoExtension}.exe ${file};${fileDirname}\\${fileBasenameNoExtension}.exe;rm ${fileDirname}\\${fileBasenameNoExtension}.exe",
         }
     ],
     "version": "2.0.0"
